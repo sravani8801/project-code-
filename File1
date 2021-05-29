@@ -1,0 +1,16 @@
+from itertools import cycle
+n=int(input())
+p = list(range(1,n+ 1))
+d= []
+l = cycle(p)
+while len(p)!= 1:
+    x= next(l)
+    if x not in d:
+        y = next(l)
+    if y not in d:
+        d.append(y)
+    else:
+        p = set(p) - set(d)
+        #print(sorted(p))
+        l = cycle(sorted(p))
+print(x)
